@@ -1,0 +1,12 @@
+<a (click)="onItemSelected(item)" class="nav-link"
+    [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}">
+    <i class="{{item.iconName}}"></i>
+    <span>{{item.displayName}}</span>
+</a>
+
+<div class="collapse" *ngIf="expanded">
+    <div class="bg-white py-2 collapse-inner rounded">
+    <h6 class="collapse-header">Custom Components:</h6>
+    <app-menu-list-item class="collapse-item" *ngFor="let child of item.children" [item]="child" [depth]="depth+1"></app-menu-list-item>
+    </div>
+</div>

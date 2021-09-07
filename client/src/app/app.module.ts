@@ -10,16 +10,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component'
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
-import {ToastrModule} from 'ngx-toastr'
-import { AuthGuard } from './_guards/auth.guard';
+import { SidebarComponent } from './sidebar/sidebar.component'
+import { SharedModule } from './_modules/shared.module';
+import { MenuListItemComponent } from './_wrappers/ui/menu-list-item/menu-list-item.component';
+import { WrapperComponent } from './_wrappers/ui/wrapper/wrapper.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent,
+    MenuListItemComponent,
+    WrapperComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +31,7 @@ import { AuthGuard } from './_guards/auth.guard';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot({
-      positionClass: 'toast-top-right'
-    })
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

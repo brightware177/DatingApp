@@ -1,9 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { User } from '../_models/user';
 import { AccountService } from '../_services/account.service';
 
 @Component({
@@ -27,11 +24,6 @@ export class LoginComponent implements OnInit {
       console.error(error);
       this.toastr.error(error.error)
     })
-  }
-
-  logout(){
-    this.accountService.logout();
-    this.router.navigateByUrl('/login')
   }
 
   isLoggedIn(){
